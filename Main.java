@@ -8,18 +8,22 @@ public class Main {
 	int buffer=0;
 	int outputInt=0;
 	int inputInt=Integer.parseInt(inputString);
+	System.out.println(inputInt);
 
 
 
 
-	for (int i=0; i<3; i++){
+	for (int i=0; i<4; i++){
 
-		buffer = inputInt%(10^i);
+		buffer = inputInt%(10);
+		inputInt=inputInt/10;
 		System.out.println(buffer);
-		buffer=(buffer+7)%10;
+		buffer=((buffer+7)%10);
 		System.out.println(buffer);
-		outputInt=outputInt+buffer*10^i;
+		outputInt=outputInt+buffer*((int)Math.pow(10,i));
+		System.out.println(outputInt);
 	}
+
 
 
 	String intermediateString=Integer.toString(outputInt);
@@ -31,7 +35,8 @@ public class Main {
 	outputChar[1]=outputChar[3];
 	outputChar[3]=charBuffer;
 	String outputString = String.valueOf(outputChar);
-	
+	System.out.println(outputString);
+
 
 
     }
